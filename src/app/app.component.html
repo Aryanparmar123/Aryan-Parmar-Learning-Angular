@@ -1,3 +1,10 @@
-<title>{{title}}</title>
-<h1>{{about}}</h1>
-<h2>{{heading}}</h2>
+<div class="container">
+  <h2>User List</h2>
+  <div *ngFor="let counter of counterList" >
+    <h3>{{ counter.PlayerName }}</h3>
+    <p>ID: {{ counter.id }}</p>
+    <p>Guns: {{ counter.guns}}</p>
+    <p>Places: {{counter.places}}</p>
+    <p>Cars: {{ counter.isCars ? 'Yes' : 'No' }}</p>
+  </div>
+</div>
