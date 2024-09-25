@@ -1,1 +1,8 @@
-<p>event-list-item works!</p>
+<div *ngIf="events" class="list-item">
+  <h2>Event Details</h2>
+  <h1><strong>Name:</strong> {{ events.Name }}</h1>
+  <p>Place: {{ events.place }}</p>
+  <p>Type: {{ events.type }}</p>
+  <p><strong>Coordinator:</strong> {{ events.coordinator }}</p>
+  <p><strong>Description:</strong> {{ events.description ? events.description : 'No description available.' }}</p>
+</div>
