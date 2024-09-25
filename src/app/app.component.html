@@ -1,3 +1,17 @@
-<div class="container">
+<div class="eventsSite">
+  <h1>Upcoming Events</h1>
+  <div *ngFor="let event of events" class="event-card">
+    <h2>{{ event.Name }}</h2>
+    <p><strong>Place:</strong> {{ event.place }}</p>
+    <p><strong>Type:</strong> {{ event.type }}</p>
+
+    <p *ngIf="event.description">
+      <strong>Description:</strong> {{ event.description }}
+    </p>
+    <p *ngIf="!event.description">
+      <strong>Description:</strong> no available
+    </p>
+
+  </div>
 
 </div>

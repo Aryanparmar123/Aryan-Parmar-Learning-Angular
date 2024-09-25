@@ -1,7 +1,8 @@
-export interface Events {
-  id: number,
+export interface events {
+eventId:number;
   Name: string,
   place: string,
   type:string;
+  cordinator:String;
   description?: string
 }
