@@ -1,5 +1,16 @@
-<app-event-list-item></app-event-list-item>
-<app-event-list-item></app-event-list-item>
-<app-event-list-item></app-event-list-item>
-<app-event-list-item></app-event-list-item>
+<div>
+  <table>
+    <tbody>
+    <tr *ngFor="let event of events" >
+      <td>{{ event.eventId }}</td>
+      <td>{{ event.Name }}</td>
+      <td>{{ event.place }}</td>
+      <td>{{ event.type }}</td>
+      <td>{{ event.coordinator }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <app-event-list-item ></app-event-list-item>
+</div>
 
