@@ -1,5 +1,6 @@
 <div class="eventsSite">
   <h1>Upcoming Events</h1>
+  <app-event-list-item  *ngIf="events" [events]="events"></app-event-list-item>
 
   <app-event-list></app-event-list>
 
