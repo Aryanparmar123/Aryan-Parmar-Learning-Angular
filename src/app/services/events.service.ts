@@ -15,4 +15,26 @@ export class EventsService {
   getEvents(): Observable<events[]> {
     return of(this.events);
   }
+  getEventById(eventId: number): Observable<events | undefined> {
+    const foundEvent = this.events.find(event => event.eventId === eventId);
+    return of(foundEvent);
+  }
+
+  addEvent(newEvent: events): Observable<events[]> {
+    this.events.push(newEvent);
+    return of(this.events);
+  }
+
+  updateEvent(updatedEvent: events): Observable<events[]> {
+    const index = this.events.findIndex(event => event.eventId === updatedEvent.eventId);
+    if (index !== -1) {
+      this.events[index] = updatedEvent;
+    }
+    return of(this.events);
+  }
+
+  deleteEvent(eventId: number): Observable<events[]> {
+    this.events = this.events.filter(event => event.eventId !== eventId);
+    return of(this.events);
+  }
 }

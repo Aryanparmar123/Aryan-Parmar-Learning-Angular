@@ -20,5 +20,10 @@ export class EventListComponent  {
 
   constructor(private eventsService: EventsService) {}
 
+  ngOnInit(): void {
+    this.eventsService.getEvents().subscribe(data => {
+      this.eventList = data;
+    });
+  }
 
 }
