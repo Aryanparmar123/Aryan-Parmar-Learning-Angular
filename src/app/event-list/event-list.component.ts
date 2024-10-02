@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import{events} from '../Shared/Models/events';
-import {EventListItemComponent} from "../event-list-item/event-list-item.component";
-import {NgForOf} from "@angular/common";
-
+import { Component, OnInit } from '@angular/core';
+import { events } from '../Shared/Models/events';
+import { EventListItemComponent } from "../event-list-item/event-list-item.component";
+import { NgForOf } from "@angular/common";
+import { EventsService } from '../services/events.service';
 
 @Component({
   selector: 'app-event-list',
@@ -12,17 +12,13 @@ import {NgForOf} from "@angular/common";
     NgForOf
   ],
   templateUrl: './event-list.component.html',
-  styleUrl: './event-list.component.css'
+  styleUrls: ['./event-list.component.css']
 })
-export class EventListComponent {
+export class EventListComponent  {
 
+  eventList: events[] = [];
 
+  constructor(private eventsService: EventsService) {}
 
-  //Catch the onclick event from the html
-  selectedEvents?: events;
-  //function to set which student to display
-  selectEvents(newevent: events): void {
-    this.selectedEvents = newevent;
-  }
 
 }

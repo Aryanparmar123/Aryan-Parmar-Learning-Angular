@@ -1,7 +1,7 @@
 <div>
   <table>
     <tbody>
-    <tr *ngFor="let event of events" (click)="selectEvents(event)">
+    <tr *ngFor="let event of eventList">
       <td>{{ event.eventId }}</td>
       <td>{{ event.Name }}</td>
       <td>{{ event.place }}</td>
@@ -11,6 +11,6 @@
     </tbody>
   </table>
 
-  <app-event-list-item [events]="selectedEvents"></app-event-list-item>
+  <app-event-list-item></app-event-list-item>
 </div>
 
