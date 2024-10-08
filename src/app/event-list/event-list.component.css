@@ -1,14 +1,9 @@
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+
+.even-item {
+  background-color: pink;
 }
 
-tr {
-  background-color: lightblue;
-}
-
-tr:nth-child(even) {
-  background-color: lightgreen;
+.odd-item {
+  background-color: teal;
 }

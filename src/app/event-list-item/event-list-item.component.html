@@ -1,4 +1,4 @@
-<div *ngIf="events" class="list-item">
+<div *ngIf="events" class="list-item"  [ngStyle]="{'background-color': index % 2 === 0 ? 'grey' : 'orange'}">
   <h1>Event Details</h1>
   <h1><strong>Name:</strong> {{ events.Name }}</h1>
   <p><b>Place:</b> {{ events.place }}</p>

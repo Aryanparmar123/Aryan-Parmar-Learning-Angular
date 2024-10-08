@@ -1,5 +1,3 @@
-<app-event-list-item [events] = events[1]></app-event-list-item>
-<app-event-list-item [events] = events[2]></app-event-list-item>
-<app-event-list-item [events] = events[3]></app-event-list-item>
-<app-event-list-item [events] = events[4] ></app-event-list-item>
-
+<div *ngFor="let event of events; let i = index">
+  <app-event-list-item [events]="event"   [ngStyle]="{'background-color': i % 2 === 0 ? 'pink' : 'teal'}"   [index]="i"></app-event-list-item>
+</div>

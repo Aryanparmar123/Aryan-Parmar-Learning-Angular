@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import{events} from '../Shared/Models/events';
 import {EventListItemComponent} from "../event-list-item/event-list-item.component";
-import {NgForOf} from "@angular/common";
+import {NgClass, NgForOf, NgStyle} from "@angular/common";
 
 
 @Component({
@@ -9,7 +9,9 @@ import {NgForOf} from "@angular/common";
   standalone: true,
   imports: [
     EventListItemComponent,
-    NgForOf
+    NgForOf,
+    NgClass,
+    NgStyle
   ],
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
