@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import{events} from '../Shared/Models/events';
 import {EventListItemComponent} from "../event-list-item/event-list-item.component";
+import {NgForOf} from "@angular/common";
 
 
 @Component({
   selector: 'app-event-list',
   standalone: true,
   imports: [
-    EventListItemComponent
+    EventListItemComponent,
+    NgForOf
   ],
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
@@ -40,6 +42,11 @@ export class EventListComponent {
     eventId:6, Name: "Charity Run", place: "City Park", type: "Sporting Event", cordinator:"joseph",
     description: "A fun run to raise funds for local charities."
   }]
-
+  //Catch the onclick event from the html
+  selectedEvents?: events;
+  //function to set which student to display
+  selectEvents(newevent: events): void {
+    this.selectedEvents = newevent;
+  }
 
 }
