@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import{events} from '../Shared/Models/events';
 import {EventListItemComponent} from "../event-list-item/event-list-item.component";
 import {NgClass, NgForOf, NgStyle} from "@angular/common";
+import {EventService} from "../service/event.service";
 
 
 @Component({
@@ -17,12 +18,10 @@ import {NgClass, NgForOf, NgStyle} from "@angular/common";
   styleUrl: './event-list.component.css'
 })
 export class EventListComponent {
+  events: events[] = []; // Declare the events array
 
-  //Catch the onclick event from the html
-  selectedEvents?: events;
-  //function to set which student to display
-  selectEvents(newevent: events): void {
-    this.selectedEvents = newevent;
-  }
+  constructor(private eventService: EventService) {}
+
+
 
 }
