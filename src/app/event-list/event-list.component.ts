@@ -18,9 +18,15 @@ import {EventService} from "../service/event.service";
   styleUrl: './event-list.component.css'
 })
 export class EventListComponent {
-  events: events[] = []; // Declare the events array
+  events: events[] = [];
 
   constructor(private eventService: EventService) {}
+
+  ngOnInit(): void {
+    this.eventService.getAllEvents().subscribe((data: events[]) => {
+      this.events = data;
+    });
+  }
 
 
 
